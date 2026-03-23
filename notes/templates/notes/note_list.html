@@ -1,0 +1,26 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<div class="row">
+    {% for note in object_list %}
+    <div class="col-md-4">
+        <div class="sticky-note card mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ note.title }}</h5>
+                <p class="card-text">{{ note.content|linebreaks }}</p>
+                <small class="text-muted">Created: {{ note.created_at|date:"M d, Y" }}</small>
+                
+                <div class="note-actions mt-auto pt-3">
+                    <a href="{% url 'note_update' note.pk %}" class="btn btn-edit">Edit</a>
+                    <a href="{% url 'note_delete' note.pk %}" class="btn btn-delete">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="col-12 text-center">
+        <p class="lead">No notes yet. Click "+ New Note" to get started!</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "notes/base.html" %}
+
+{% block content %}
+<div class="card p-4 shadow-sm mx-auto" style="max-width: 400px;">
+    <h2>{% if object %}Edit{% else %}Create{% endif %} Note</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save Note</button>
+        <a href="{% url 'note_list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

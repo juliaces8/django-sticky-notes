@@ -1,0 +1,79 @@
+/* Custom Sticky Note Styling */
+form p input, form p textarea {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin-bottom: 15px;
+}
+
+body { 
+    background-color: #f8f9fa; 
+    padding-top: 50px; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sticky-note {
+    background-color: #fff382;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+    min-height: 180px; /* Slightly shorter */
+    transform: rotate(-1deg);
+    transition: all 0.3s ease; /* Smoother transition */
+    border: none;
+}
+
+.sticky-note:nth-child(even) { 
+    transform: rotate(2deg); 
+    background-color: #ffc1e3; 
+}
+
+.sticky-note:hover { 
+    transform: scale(0.95) rotate(0deg); 
+    z-index: 10; 
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.1);
+}
+
+.sticky-note a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Styling the action buttons to stand out */
+.btn-edit {
+    background-color: transparent !important;
+    color: #007bff !important; /* Blue */
+    border: none;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.btn-edit:hover {
+    color: #0056b3 !important;
+    text-decoration: underline;
+}
+
+.btn-delete {
+    background-color: transparent !important;
+    color: #dc3545 !important; /* Red */
+    border: none;
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+.btn-delete:hover {
+    color: #a71d2a !important;
+    text-decoration: underline;
+}
+
+/* Space between buttons */
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
